@@ -11,7 +11,7 @@ def index():
     return 'Hello world'
 
 
-@app.route('/intance')
+@app.route('/intense')
 def settimer():
     getcpuover75()
 
