@@ -15,7 +15,7 @@ node {
     
     stage('Test image') {
         echo "Testing Image"
-        sh  "docker run -d -p 80:80 --name my_app 35.188.146.83:400/ofirimage"
+        sh  "docker run -d -p 80:80 --name my_app 35.188.146.83:5000/ofirimage"
         dir('test'){
 		echo "running python"
 		ANSWER = sh(returnStdout: true , script: 'python2.7 unittest.py').trim()
@@ -38,7 +38,7 @@ node {
         /* 
 			You would need to first register with DockerHub before you can push images to your account
 		*/
-        docker.withRegistry('35.188.146.83:400', 'docker-hub') {
+        docker.withRegistry('35.188.146.83:5000', 'docker-hub') {
             app.push("${env.BUILD_NUMBER}")
             app.push("latest")
             } 
