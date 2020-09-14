@@ -29,11 +29,6 @@ node {
 		}
  	 }
     }
-    stage('Clean things'){
-        sh "docker kill my_app"
-        sh "docker rm my_app"
-
-    }
     stage('Push image') {
 	sh "docker push 35.188.146.83:5000/ofirimage"
 	echo "finished"
