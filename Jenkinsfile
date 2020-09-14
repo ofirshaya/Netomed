@@ -15,7 +15,7 @@ node {
     
     stage('Test image') {
         echo "Testing Image"
-        sh  "docker run -d -p 5000:5000 --name my_app 35.188.146.83:400/ofirimage"
+        sh  "docker run -d -p 80:80 --name my_app 35.188.146.83:400/ofirimage"
         dir('test'){
 		echo "running python"
 		ANSWER = sh(returnStdout: true , script: 'python2.7 unittest.py').trim()
