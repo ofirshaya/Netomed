@@ -1,7 +1,5 @@
 #!/usr/bin/env python
 import psutil
-print(x)
-
 
 def checkcpu():
     x = psutil.cpu_percent()

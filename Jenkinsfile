@@ -18,7 +18,7 @@ node {
         sh  "docker run -d -p 5000:5000 --name my_app 35.188.146.83:400/ofirimage"
         dir('test'){
 		echo "running python"
-		ANSWER = sh(returnStdout: true , script: 'python3 unittest.py').trim()
+		ANSWER = sh(returnStdout: true , script: 'python unittest.py').trim()
 		if (ANSWER == 'test failed') {	
 			echo '[FAILURE] Failed to build'
 			error('Stopping early…')
