@@ -10,7 +10,7 @@ node {
     stage('Build image') {
         /* This builds the actual image */
 
-        app = docker.build("35.188.146.83:400/ofirimage")
+        app = docker.build("35.188.146.83:5000/ofirimage")
     }
     
     stage('Test image') {
