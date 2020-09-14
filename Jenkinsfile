@@ -19,7 +19,7 @@ node {
         dir('test'){
 		echo "running python"
 		ANSWER = sh(returnStdout: true , script: 'python2.7 unittest.py').trim()
-		if (ANSWER == 'test failed') {	
+		if (ANSWER == 0) {	
 			echo '[FAILURE] Failed to build'
 			error('Stopping early…')
             		currentBuild.result = 'FAILURE'
