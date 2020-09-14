@@ -1,9 +1,8 @@
 #!/usr/bin/env python
-import httplib
+import requests
 def check_status():
-    c = httplib.HTTPConnection('http://35.188.146.83:5000')
-    c.request("HEAD", '')
-    if c.response().status == 200:
+    c = requests.get('http://35.188.146.83:5000')
+    if '200' in str(c): 
         return 1
     else:
         return 0
