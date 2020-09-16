@@ -18,13 +18,13 @@ def settimer():
 
 def getcpuover75():
     processes = cpu_count()
-    return ('Utilizing %d cores' % processes)
+#    return ('Utilizing %d cores' % processes)
     pool = Pool(processes)
     pool.map(overcpu, range(processes))
 #   processces = cpu_count()
 #   pool = Pool(processces)
 #   pool.map(overcpu(10), range(processces))
-#   app.route('/')
+#    app.route('/')
 
 
 def overcpu(x):
